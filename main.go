@@ -119,7 +119,7 @@ func searchArticles(query string) []SearchResult {
 				return err
 			}
 			if strings.Contains(string(content), query) {
-				link := strings.Replace("/content/articles/"+path, "/content/articles/content", "", 1)
+				link := strings.Replace(path, "content", "", 1)
 				description := getScreenReaderText(string(content))
 				date := extractDate(string(content))
 				results = append(results, SearchResult{Link: link, Description: description, Date: date})
