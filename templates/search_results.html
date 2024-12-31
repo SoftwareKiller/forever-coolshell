@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ .query }}"</h1>
+    <ul>
+        {{ range .results }}
+        <li>
+            <a href="{{ .Link }}">{{ .Link }}</a>
+            <p>{{ .Description }}</p>
+        </li>
+        {{ else }}
+        <li>No results found</li>
+        {{ end }}
+    </ul>
+</body>
+</html>
